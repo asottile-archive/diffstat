@@ -1459,12 +1459,19 @@ do_file(FILE *fp, const char *default_name)
 			&& date_delims(yrmon, monday)
 			&& !version_num(b_fname))
 		    || (sscanf(buffer,
-			       "*** %[^\t ]%[\t ]",
+			       "*** %[^\t]%[\t]",
 			       b_fname,
 			       b_temp1) >= 1
 			&& !version_num(b_fname)
 			&& !contain_any(b_fname, "*")
 			&& !edit_range(b_fname))
+		    || (sscanf(buffer,
+			       "*** %[^\t ]%[\t ]",
+                               b_fname,
+                               b_temp1) >= 1
+                        && !version_num(b_fname)
+                        && !contain_any(b_fname, "*")
+                        && !edit_range(b_fname))
 		    ) {
 		    prev = that;
 		    finish_chunk(that);
