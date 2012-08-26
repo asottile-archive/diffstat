@@ -2,3 +2,11 @@ diffstat
 ========
 
 Fork of diffstat from http://invisible-island.net/diffstat
+
+$Id: README,v 1.5 2001/10/11 00:23:46 tom Exp $
+
+Readme file for DiffStat.
+
+This program is a simple filter that reads the output of the 'diff' program,
+and produces a histogram of the total number of lines that were changed.  It is
+useful for scanning a patch file to see which files were changed.
